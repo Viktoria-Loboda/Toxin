@@ -1,0 +1,41 @@
+@mixin reset-list-style {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+@mixin fonts-for-navigation {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.214rem;
+	color: rgba(31, 32, 65, 0.5);
+}
+
+@mixin fonts-for-buttons {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 0.857142rem;
+	line-height: 1.071em;
+
+	text-transform: uppercase;
+}
+
+@mixin button-theme-of-purple {
+	color: #FFFFFF;
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	font-size: 0.857142rem;
+	padding: 1em 2em;
+	border-radius: 1.8em;
+}
+
+@mixin button-theme-of-transparent {
+	color: #BC9CFF;
+	letter-spacing: 0.04166em;
+
+	padding: 0.8em 1.6em;
+	border: 2px solid #BC9CFF;
+	border-radius: 1.8em;
+}
