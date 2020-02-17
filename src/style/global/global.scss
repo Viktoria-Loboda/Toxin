@@ -1,35 +1,114 @@
-html,
-body {
+// общие стили
+* {
 	margin: 0;
 	padding: 0;
 }
 
 html {
-	font-size: 16px;
+	@include general-fonts();
+	font-size: 14px;
+
+	// @media (min-width: 1600px) {
+	// 	font-size: 16px;
+	// }
 }
 
-@media (min-width: 500px) {
-	html {
-		font-size: 14px;
-	}
-}
-
-@media (min-width: 1600px) {
-	html {
-		font-size: 16px;
-	}
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	min-width: 320px;
 	max-width: 1920px;
 	margin: 0 auto;
-
 	// width: 1440px;
-
 	// border: 1px solid green;
 }
 
-.visually-hidden {
+.wrapper {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.content {
+	display: table-row;
+	height: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	@include fonts-for-h1();
+}
+
+h2 {
+	@include fonts-for-h1();
+}
+
+h3,
+label {
+	@include fonts-for-label();
+}
+
+label {
+	cursor: pointer;
+}
+
+input {
+	@include style-for-input();
+}
+
+input::placeholder {
+	color: rgba(31, 32, 65, 0.25);
+}
+
+input:hover,
+input:focus {
+	outline: none;
+	color: $gray-75;
+	border: 1px solid $gray-50;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
 	display: none;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+	@include style-for-checkbox();
+}
+
+input[type="radio"] {
+	border-radius: 0.71em;
+}
+
+input[type="checkbox"]:checked + label:before {
+  border: 1px solid $purple;
+  // добавляется элемент из спрайта
+}
+
+input[type="radio"] {
+	border: 1px solid $purple;
+}
+
+input[type="checkbox"] + label {
+	@include fonts-for-label-checkbox();
+}
+
+button {
+	@include fonts-for-button();
+	@include style-button-theme-purple();
 }

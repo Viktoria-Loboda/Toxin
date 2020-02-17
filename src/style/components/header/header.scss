@@ -10,7 +10,7 @@
 		align-content: center;
 		justify-content: space-between;
 
-		padding: 1.04% 4.8%;
+		padding: 1.04% 4.5%;
 	}
 
 	@media(min-width: 1300px) {
@@ -20,12 +20,15 @@
 }
 
 .logo {
-  display: block;
   width: 150px;
   height: 50px;
+}
+
+.header__logo {
+  display: block;
   margin: 0 auto;
 
-  @media (min-width: $width-mobile) { 
+	@media (min-width: $width-mobile) { 
   	display: inline;
    	margin: 0;
 	}
@@ -37,7 +40,9 @@
 
 .nav {
 	@include reset-list-style();
+}
 
+.header__nav {
 	@media (min-width: $width-mobile) {
 		margin: 12px 0;
 		margin-left: 5px;
@@ -96,6 +101,9 @@
 
 .user-block {
 	@include reset-list-style();
+}
+
+.header__user-block {
 	margin: 0 9.7%;
 	margin-top: 20px;
 
