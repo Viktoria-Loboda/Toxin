@@ -1,0 +1,130 @@
+/*ширины*/
+$width-mobile: 500px;
+
+// цвета
+$gray-100: #1F2041;
+$gray-75: rgba(31, 32, 65, 0.75);
+$gray-50: rgba(31, 32, 65, 0.5);
+$gray-25: rgba(31, 32, 65, 0.25);
+$gray-5: rgba(31, 32, 65, 0.05);
+
+$green: #6FCF97;
+$purple: #BC9CFF; 
+$purple-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+// шрифты
+$general-fonts: 'Montserrat';
+$fonts-for-title: 'Quicksand';
+
+// стили для шрифтов
+@mixin general-fonts {
+	font-family: $general-fonts, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.71rem;
+	color: $gray-75;
+}
+
+@mixin fonts-for-navigation {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.21rem;
+	color: rgba(31, 32, 65, 0.5);
+}
+
+@mixin fonts-for-h1 {
+	font-family: $fonts-for-title, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.71rem;
+	line-height: 2.14rem;
+	color: $gray-100;
+}
+
+@mixin fonts-for-h2 {
+	font-family: $fonts-for-title, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.35rem;
+	line-height: 1.71rem;
+	color: $gray-100;
+}
+
+@mixin fonts-for-label { // and h3
+	font-family: $general-fonts, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 0.857rem;
+	line-height: 1.07rem;
+	color: $gray-100;
+	text-transform: uppercase;
+}
+
+@mixin fonts-for-label-checkbox { //radio
+	font-family: $general-fonts, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.28rem;
+	color: rgba(31, 32, 65, 0.5);
+
+	text-transform: none;
+}
+
+@mixin fonts-for-button {
+	font-family: $general-fonts, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 0.857rem;
+	line-height: 1.07rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+// стили для кнопок
+@mixin style-for-input {
+	padding: 0.92em 1.07em;
+	font-size: 1rem;
+	color: $gray-75;
+
+	background: #FFFFFF;
+	border: 1px solid $gray-25;
+	box-sizing: border-box;
+	border-radius: 0.28em;
+}
+
+@mixin style-for-checkbox { //radio
+	content: "";
+	display: inline-block;
+	width: 1.4em;
+	height: 1.4em;
+
+	background-color: transparent;
+	border: 1px solid $gray-25;
+	box-sizing: border-box;
+	border-radius: 0.28em;
+
+	cursor: pointer;
+}
+
+@mixin style-button-theme-purple {
+	display: inline-block;
+	padding: 1em 1.428em;
+	padding-bottom: 1.07em;
+	color: #FFFFFF;
+	background: $purple-gradient;
+	border-radius: 1.571em;
+}
+
+@mixin style-button-theme-transparent {
+	display: inline-block;
+	padding: 1em 1.428em;
+	padding-bottom: 1.07em;
+	color: $purple;
+	border: 2px solid $purple;
+	background: transparent;
+	border-radius: 22px;
+}
