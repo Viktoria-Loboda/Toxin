@@ -1,88 +1,122 @@
 const webpack = require('webpack')
-const path = require('path')
-const HTMLPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path');
+const glob = require('glob');
+const argv = require('yargs').argv;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-  entry: './src/index.js',
+const isDevelopment = argv.mode === 'development';
+const isProduction = !isDevelopment;
+const distPath = path.join(__dirname, '/public');
+
+const config = {
+  entry: {
+    main: './src/js/index.js'
+  },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
-  },
-  optimization: {
-    minimizer: [ 
-      new UglifyJsPlugin(),
-      new OptimizeCSSAssetsPlugin({})
-    ],
+    path: distPath
   },
   module: {
     rules: [
-      { 
-        test: /\.js$/i, exclude: /node_modules/, loader: "babel-loader" 
-      },
-      {
-        test: /\.scss$/i,
-        use: [
-          MiniCssExtractPlugin.loader, 
-          'css-loader', 
-          {
-            loader: 'postcss-loader',
-            options: { config: { path: './src/js/postcss.config.js' } }
-          }, 
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.pug$/i,
-        loaders: [
-          {
-            loader: "html-loader"
-          },
-          {
-            loader: "pug-html-loader",
-            options: {
-              "pretty":true
-            }
+    {
+      test: /\.pug$/i,
+      loaders: [
+        {
+          loader: "html-loader"
+        },
+        {
+          loader: "pug-html-loader",
+          options: {
+            "pretty":true
           }
-        ]
-      }, 
-      {
-        test: /\.(png|jpe?g|gif)$/i,
+        }
+      ]
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'babel-loader'
+      }]
+    }, {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      use: [
+        isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              isProduction ? require('cssnano') : () => {},
+              require('autoprefixer')({
+                browsers: ['last 2 versions']
+              })
+            ]
+          }
+        },
+        'sass-loader'
+      ]
+    }, {
+      test: /images[\\\/].+\.(gif|png|jpe?g|svg)$/i,
+      use: [{
         loader: 'file-loader',
         options: {
           name: 'images/[name].[ext]'
         }
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
-      },
-      {
-        test: /\.(eot|ttf|woff|woff2|svg)$/,
-        use: [
-          {
-            loader: 'file-loader?name=/fonts/[name].[ext]'
+      }, {
+        loader: 'image-webpack-loader',
+        options: {
+          mozjpeg: {
+            progressive: true,
+            quality: 70
           }
-        ]
-      }
-    ]
+        }
+      },
+      ],
+    }, {
+      test: /fonts[\\\/].+\.(otf|eot|svg|ttf|woff|woff2)$/i,
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
+      },
+    }]
   },
   plugins: [
-    new HTMLPlugin({
+    new HtmlWebpackPlugin({
       filename: "index.html",
       template: './src/pages/index.pug'
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     })
-  ]
-}
+  ],
+  optimization: isProduction ? {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+        uglifyOptions: {
+          compress: {
+            inline: false,
+            drop_console: true
+          },
+        },
+      }),
+    ],
+  } : {},
+  devServer: {
+    contentBase: distPath,
+    port: 9000,
+    compress: true
+  }
+};
+
+module.exports = config;

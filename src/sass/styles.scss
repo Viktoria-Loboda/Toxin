@@ -3,13 +3,10 @@
 @import 'global/mixins.scss';
 @import 'global/global.scss';
 @import 'components/header/header.scss';
+@import 'components/main-page/main-page.scss';
 
 /* @import '../plugins/air-datapicker/css/datepicker.css';
  */
 .visually-hidden {
 	display: none;
-}
-
-.main-page {
-	background: red;
 }
