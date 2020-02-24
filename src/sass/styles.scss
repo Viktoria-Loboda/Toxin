@@ -4,9 +4,18 @@
 @import 'global/global.scss';
 @import 'components/header/header.scss';
 @import 'components/main-page/main-page.scss';
+@import 'components/main-page/search-room.scss';
+@import 'components/footer/footer.scss';
 
 /* @import '../plugins/air-datapicker/css/datepicker.css';
  */
 .visually-hidden {
 	display: none;
+}
+
+.inline-svg-icon {
+	border: 1px solid black;
+	width: 20px;
+	height: 20px;
+	background: gray;
 }

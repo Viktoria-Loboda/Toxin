@@ -39,9 +39,10 @@ $fonts-for-title: 'Quicksand';
 	font-family: $fonts-for-title, sans-serif;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 1.71rem;
+	font-size: 1.785rem;
 	line-height: 2.14rem;
 	color: $gray-100;
+	letter-spacing: 0.6px;
 }
 
 @mixin fonts-for-h2 {
@@ -116,7 +117,7 @@ $fonts-for-title: 'Quicksand';
 	padding-bottom: 1.07em;
 	color: #FFFFFF;
 	background: $purple-gradient;
-	border-radius: 1.571em;
+	border-radius: 22px;
 }
 
 @mixin style-button-theme-transparent {

@@ -73,9 +73,14 @@
 		top: 1px;
 		right: -20px;
 
-		background: url('../images/on-select.png') no-repeat;
-		background-position: 5px 5px;
+		background: url('../images/sprite.png') no-repeat;
+    background-position: -1px -314px;
 		cursor: pointer;
+	}
+
+	&__item--have-sublists .nav__link:hover::after {
+		content: "";
+    background-position: -1px -297px;
 	}
 
 	@media(max-width: 500px) {

@@ -3,7 +3,7 @@ main.main-page
 	div.slide-second
 	div.slide-third
 	section.room-search.main-page__room-search
-		h2.room-search__title Найдём номера под ваши пожелания
+		h1.room-search__title Найдём номера под ваши пожелания
 		section.datepicker-wrapper
 			label.datepicker__label(for="datepicker-here") Прибытие
 				input.datepicker__input(id="datepicker-here" placeholder="ДД.ММ.ГГГГ" redonly)
@@ -13,14 +13,14 @@ main.main-page
 			label.select-guest__label(for="select-guest") Гости
 			input.select-guest__input(id="select-guest" placeholder="Сколько гостей")
 			span.select-guest__toggle 
-			div.select-guest__wrapper
+			div.select-guest__wrapper.visually-hidden
 				ul.calculate-guests
 					//- сюда вставить счетчик гостей id="calculate"
 				div.select-guest__btns
 					button.select-gues__btn.select-gues__btn--clear(type="button") Очистить
 					button.select-gues__btn.select-gues__btn--apply(type="button") Применить
-
-		p.slogan.main-page__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+		a.btn.room-search__link(href="/mock-address/change-me") Подобрать номер
+	p.slogan.main-page__slogan Лучшие номера для вашей работы,<br> отдыха и просто вдохновения
 
 
 template(id="calculate")
