@@ -658,12 +658,24 @@
     border: none; }
 
 
-/* // переписанные стили */
-@media (min-width: 320px) and (max-width: 400px) {
+/*---------------------------------------------------------------переписанные стили----------------------------------------------*/
+/*изменение стилей*/
+@media (max-width: 350px) {
   .datepicker {
-    padding: 0;
-    width: 250px;
+    width: 265px;
+    padding: 5px;
   }
+}
+
+.datepicker {
+  margin-top: 6px;
+  margin-left: 0px;
+  padding-top: 13px;
+  padding-bottom: 10px;
+}
+
+.datepicker--content {
+  padding: 0;
 }
 
 .datepickers-container {
@@ -730,10 +742,6 @@
   color: rgba(31, 32, 65, 0.5);
 }
 
-.datepicker {
-  padding-bottom: 10px;
-}
-
 .datepicker--button--use {
   font-family: Montserrat;
   font-style: normal;
@@ -764,16 +772,6 @@
   display: none;
 }
 
-
-/*изменение стилей*/
-.datepicker {
-  margin-top: -10px;
-}
-
-.datepicker--content {
-  padding: 0;
-}
-
 .datepicker--days-names {
   margin-top: 33px;
 }
@@ -789,10 +787,6 @@
   padding-top: 30px;
   padding-bottom: 8px;
 }
-
-/* .datepicker--cell.datepicker--cell-day.-weekend-.-current- {
-  height: 38px; // надо на все навесить эту
-} */
 
 .datepicker--cell.-current-.-focus- {
   color: #ffffff; }
@@ -810,20 +804,9 @@
   border-radius: 50% 0% 0% 50%; 
 }
 
-.datepicker {
-  margin-top: 6px;
-}
-
 .datepicker--nav-title {
   pointer-events: none;
 }
-
-
-.datepicker {
-  margin-left: 0px;
-  padding-top: 13px;
-}
-
 
 .datepicker--button-use {
   cursor: pointer;
@@ -832,11 +815,14 @@
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  /* identical to box height */
-
   text-transform: uppercase;
-
-  /* Primary Color */
-
   color: #BC9CFF;
+}
+
+div[data-action="prev"] { 
+  margin-left: -10px;
+}
+
+div[data-action="next"] { 
+  margin-right: -8px;
 }

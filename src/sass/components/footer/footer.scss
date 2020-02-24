@@ -67,6 +67,7 @@
 
 		& .nav__item {
 			display: block;
+			text-align: left;
 		}
 	}
 
@@ -120,19 +121,45 @@
 		margin-top: 20px;
 	}
 
+	&__email {
+		position: relative;
+		width: 260px;
+    margin: 0 auto;
+	}
+
 	@media (min-width: 500px) {
 		text-align: left;
+
+		&__email {
+			width: auto;
+	    margin: 0;
+		}
 	}
 
 	@media (min-width: 1440px) {
     margin-left: 50px;
 		margin-top: 3px;
 	}
-} 
 
-.subscribe__input--submit {
-	display: none;
-}
+	@media (min-width: 1600px) {
+	  &__input {
+			width: 100%;
+	  }
+	}
+
+	&__input--submit {
+	  position: absolute;
+	  width: 37px;
+	  height: 29px;
+	  top: 7px;
+	  right: 0;
+	  font-size: 0;
+
+	  background: url("../images/sprite.png") no-repeat;
+	  background-position: 0 -46px;
+	  border: none;
+	}
+} 
 
 @media (min-width: 1600px) {
 	.footer__nav {
@@ -157,44 +184,44 @@
 	margin: 0 auto; 
 	position: relative;
 
+	&-btn {
+		display: block;
+		width: 24px;
+		height: 24px;
+		margin-left: 20px;
+	}
+
+	&-btn::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 24px;
+		height: 24px;
+	}
+
+	&-btn--twitter::before {
+		content: "";
+		
+		background: url("../images/sprite.png") no-repeat;
+		background-position: -4px -393px;
+	}
+
+	&-btn--facebook::before {
+		content: "";
+		
+		background: url("../images/sprite.png") no-repeat;
+		background-position: -4px -102px;
+	}
+
+	&-btn--instagramm::before {
+		content: "";
+		
+		background: url("../images/sprite.png") no-repeat;
+		background-position: -4px -220px;
+	}
+
 	@media (min-width: 500px) {
 		margin: 0;
 		max-width: auto;
 	}
-}
-
-.social-btn {
-	display: block;
-	width: 24px;
-	height: 24px;
-	margin-left: 20px;
-}
-
-.social-btn::before {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 24px;
-	height: 24px;
-}
-
-.social-btn--twitter::before {
-	content: "";
-	
-	background: url("../images/sprite.png") no-repeat;
-	background-position: -4px -393px;
-}
-
-.social-btn--facebook::before {
-	content: "";
-	
-	background: url("../images/sprite.png") no-repeat;
-	background-position: -4px -102px;
-}
-
-.social-btn--instagramm::before {
-	content: "";
-	
-	background: url("../images/sprite.png") no-repeat;
-	background-position: -4px -220px;
 }
