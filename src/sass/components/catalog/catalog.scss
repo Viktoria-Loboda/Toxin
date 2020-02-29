@@ -1,0 +1,301 @@
+.catalog {
+  width: 71.9%;
+// временно
+  border: 1px solid green;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+  }
+}
+
+.card {
+	min-width: 270px;
+  max-width: 270px;
+ 
+  margin: 9.5px 0;
+  margin-right: 12px;
+
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
+  &:hover .card-slide::before {
+    content: '';
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:hover .card-slide::after {
+    content: '';
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  & .card-slide__btn--next,
+  & .card-slide__btn--prev {
+    display: none;
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    z-index: 2;
+  }
+
+  & .card-slide__btn--prev {
+    left: 0;
+  }
+
+  &:hover .card-slide__btn--next,
+  &:hover .card-slide__btn--prev {
+    display: block;
+  }
+}
+
+.card-slide {
+  position: relative;
+  max-width: 100%;
+  height: 151px;
+
+  &__item > img {
+    width: 100%;
+    height: 151px;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__btn--prev,
+  &__btn--next {
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+  }
+
+  &__dots {
+    position: absolute;
+    right: 11px;
+    bottom: 5px;
+    z-index: 2;
+  }
+
+  &__dots-item {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+
+    border-radius: 100%;
+    border: 1px solid #ffffff;
+    background: transparent;
+    transition: background-color 0.6s ease;
+  }
+
+  & .active,
+  &__dots-item:hover {
+    background-color: #ffffff;
+  }
+}
+
+.card__main {
+  padding: 20px;
+  padding-top: 24px;
+  padding-right: 15px;
+}
+
+.card__column--top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__column--bottom {
+  display: flex;
+  justify-content: space-between;
+  
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+
+  padding-top: 12px;
+  margin-top: 11px;
+  margin-right: 5px;
+  border-top: 1px solid rgba(31, 32, 65, 0.1);
+}
+
+.card__number-room {
+  font-family: $fonts-for-title, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+
+  color: #1F2041;
+
+  & .value {
+    font-family: 'Arial', sans-serif;
+    font-size: 19px;
+  }
+}
+
+.card__status-room {
+  font-family: $general-fonts, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  color: #BC9CFF;
+  margin-left: 3px;
+}
+
+.card__price {
+  font-family: $general-fonts;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: rgba(31, 32, 65, 0.5);
+
+  & b {
+    font-weight: normal;
+    font-size: 13px;
+  }
+}
+
+.card__currency {
+  margin-left: -5px;
+}
+
+.card__count-comments {
+  font-weight: 600;
+}
+
+.card__rating {
+  display: flex;
+  position: relative;
+
+  & li {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: url('../images/star_border.png') no-repeat;
+  }
+
+  &--one-star li.current:before,
+  &--two-star li.current:before,
+  &--three-star li.current:before,
+  &--four-star li.current:before,
+  &--five-star li.current:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+
+    background: url('../images/star.png');
+    background-repeat: space no-repeat;
+    z-index: 1;
+  }
+
+  &--two-star li.current:before {
+    width: 45px;
+  }
+
+  &--three-star li.current:before {
+    width: 70px;
+  }
+
+  &--four-star li.current:before {
+    width: 95px;
+  }
+
+  &--five-star li.current:before {
+    width: 120px;
+  }
+
+  & li:nth-child(2):hover::before,
+  & li:nth-child(3):hover::before,
+  & li:nth-child(4):hover::before,
+  & li:nth-child(5):hover::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 20px;
+    
+    top: 0;
+    left: 0;
+    cursor: pointer;
+
+    background: url('../images/star.png');
+    background-repeat: space no-repeat;
+  }
+
+  & li:nth-child(3):hover::before {
+    width: 70px;
+  }
+
+  & li:nth-child(4):hover::before {
+    width: 95px;
+  }
+
+  & li:nth-child(5):hover::before {
+    width: 120px;
+  }
+}
+
+// анимация слайдов
+.card-slide__item {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.7
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.7
+  }
+
+  to {
+    opacity: 1
+  }
+}
