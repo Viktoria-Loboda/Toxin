@@ -1,6 +1,203 @@
+.filter {
+  max-width: 270px;
 
-.sidebar {
-  width: 23%;
+  & .datepicker__label {
+  	width: 100%;
+  	margin-top: 0;
+  	letter-spacing: 0.1px;
+  }
 
-  border: 1px solid red;
+  & .datepicker__input {
+  	width: 100%;
+  	max-width: 266px;
+  }
+
+  & .select-guest {
+    margin-top: 14px;
+  }
+
+  & .select-guest__label {
+  	display: block;
+  	widows: 100%;
+  }
+
+  & .select-guest__input {
+  	display: block;
+    width: 100%;
+    max-width: 266px;
+    margin-top: 4px;
+  }
 }
+
+.slider {
+	margin-top: 31px;
+
+	&__header {
+		display: flex;
+    justify-content: space-between;
+	}
+
+	&__remainder {
+		font-family: $general-fonts, sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+
+		color: rgba(31, 32, 65, 0.5);
+	}
+}
+
+.price {
+	font-family: $general-fonts, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+
+	text-align: right;
+	text-transform: uppercase;
+	color: rgba(31, 32, 65, 0.5);
+
+	& b {
+		font-weight: 400;
+	}
+}
+
+.service {
+	margin-top: 27px;
+
+	&__column {
+		margin-bottom: 3px;
+		margin-left: 32px;
+	}
+
+	&__title {
+		margin-bottom: 15px;
+	}
+
+	&__label {
+		position: relative;
+
+		& span {
+			display: block;
+			margin-top: -6px;
+		}
+	}
+
+	&__input + label::before {
+		position: absolute;
+    left: -29px;
+    top: -2px;
+	}
+}
+
+.availability {
+	margin-top: 33px;
+
+	&__column {
+		margin-top: 11px;
+		margin-bottom: 3px;
+		margin-left: 32px;
+	}
+
+	&__input[type="checkbox"] + label {
+		position: relative;
+		font-family: $general-fonts, sans-serif;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 1.28rem;
+		color: rgba(31, 32, 65, 0.75);
+
+		& .small-text {
+			display: block;
+			margin-top: 0px;
+			font-weight: normal;
+			font-size: 12px;
+			line-height: 14px;
+			color: rgba(31, 32, 65, 0.5);
+		}
+	}
+
+	&__input + label::before {
+		position: absolute;
+    left: -29px;
+    top: -2px;
+	}
+}
+
+.select-comfort {
+	margin-top: 30px;
+
+	&__label {
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	&__label::before {
+		content: "";
+		width: 20px;
+		height: 20px;
+
+		position: absolute;
+		top: 30px;
+    right: 9px;
+
+    background: url('../images/sprite.png') no-repeat;
+    background-position: -3px -312px;
+	}
+
+	@media (min-width: 1600px) {
+		&__label::before {
+			content: "";
+	    background-position: -3px -308px;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		max-width: 266px;
+		display: block;
+		margin-top: 5px;
+	}
+}
+
+.add-comfort {
+	margin-top: 30px;
+
+	&__label {
+		display: block;
+		position: relative;
+		margin-left: 32px;
+		margin-top: 10px;
+	}
+
+	&__input + label::before {
+		position: absolute;
+		left: -29px;
+    top: -2px;
+	}	
+
+	&__title {
+		position: relative;
+		margin-bottom: 17px;
+	}
+
+	&__title::before {
+	  content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    top: 0;
+    background: url('../images/sprite.png') no-repeat;
+    background-position: 0px -317px;
+	}
+}
+
+// 1. поправить все стили 
+// 2. отредактировать слайдер
+// 3. подключить слайдер

@@ -1,0 +1,172 @@
+.registration {
+	max-width: 380px;
+	padding: 30px;
+	padding-top: 40px;
+
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	box-sizing: border-box;
+
+	&__title {
+		margin: 0;
+		font-size: 25px;
+		line-height: 30px;
+	}
+
+	&__row--fio {
+		margin-top: 12px;
+	}
+
+	&__row--date-of-birth {
+		margin-top: 21px;
+	}
+
+	&__row--login-info {
+		margin-top: 20px;
+	}
+
+	&__row--toggle {
+		margin-top: 7px;
+	}
+
+	&__row--login {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	// радиобаттонны
+	&__radio {
+		display: inline-block;
+		margin-top: 10px;
+	}
+
+	&__label {
+		display: block;
+		width: 100%;		
+	}
+
+	&__input {
+		width: 100%;
+		padding: 13px;	
+		margin-top: 7px;
+	}
+
+	&__input::placeholder { 
+		font-size: 14px;
+		line-height: 18px;
+		color: rgba(31, 32, 65, 0.25); 
+	} 
+
+	&__input[type="radio"] + label {
+		padding: 0 0 0 29px;
+		margin-right: 18px;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 24px;
+
+		color: rgba(31, 32, 65, 0.75);
+		text-transform: none;
+	}
+
+	&__input[type="radio"] + label::before {
+		content: "";
+		top: 2px;
+    left: -2px;
+	}
+
+	&__input[type="radio"] + label::after {
+		content: "";
+		top: 7px;
+    left: 3px;
+	}
+	// радиобаттонны
+
+	// переключатель
+	&__input--toggle {
+		display: none;
+	}
+
+	&__input--toggle + label {
+		position: relative;
+		padding: 0 0 0 48px;
+		cursor: pointer;
+		width: auto;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 24px;
+		color: rgba(31, 32, 65, 0.75);
+		text-transform: none;
+	}
+
+	&__input--toggle + label::before {
+		content: '';
+		position: absolute;
+		top: 3px;
+		left: 0;
+		width: 36px;
+		height: 18px;
+		border-radius: 13px;
+		background: #ffffff;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		transition: .2s;
+	}
+
+	&__input--toggle + label::after {
+		content: '';
+		position: absolute;
+		top: 7px;
+		left: 4px;
+		width: 12px;
+		height: 12px;
+		border-radius: 10px;
+		background: #FFF;
+		transition: .2s;
+		background: rgba(31, 32, 65, 0.25);
+	}
+
+	&__input--toggle:checked + label::before {
+		border: 1px solid #BC9CFF;	
+	}
+
+	&__input--toggle:checked + label::after {
+		left: 21px;
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	}
+	// переключатель
+
+	&__submit {
+		position: relative;
+		width: 100%;
+		margin-top: 23px;
+		padding: 14px 20px 15px 20px;
+
+		border: none;
+		box-sizing: border-box;
+		cursor: pointer;
+	}
+
+	&__submit::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 30px;
+		height: 20px;
+		top: 11px;
+		right: 5px;
+
+		background: url('./images/sprite.png') no-repeat;
+		background-position: 0 -24px;
+	}
+
+	& .login {
+		padding: 14px 24px;
+	}
+}
