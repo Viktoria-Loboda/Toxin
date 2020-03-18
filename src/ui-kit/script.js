@@ -1,3 +1,4 @@
-import './page-1/date-picker/date-picker.js';
+// import '../components/dropdown/dropdown-convenience/add-function-for-dropdown.js';
+// import '../components/dropdown/dropdown-guests/add-function-for-dropdown.js';
 
-import '../components/dropdown/add-function-for-dropdown.js';
+import '../components/date-picker/date-picker.js';

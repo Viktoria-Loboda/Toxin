@@ -1,11 +1,11 @@
 export default class Dropdown {
 	constructor(id, min, max, callback) {
-		let dropdown = document.getElementById(id);
-		this.btnPlus  = dropdown.querySelectorAll('.counter__btn--plus');
-		this.btnMinus = dropdown.querySelectorAll('.counter__btn--minus');
-		this.btnToggle = dropdown.querySelector('.dropdown__toggle');
-		this.dropdownInput = dropdown.querySelector('.dropdown__input');
-		this.dropdownCounter = dropdown.querySelector('.counter');
+		this.dropdown = document.getElementById(id);
+		this.btnPlus  = this.dropdown.querySelectorAll('.counter__btn--plus');
+		this.btnMinus = this.dropdown.querySelectorAll('.counter__btn--minus');
+		this.btnToggle = this.dropdown.querySelector('.dropdown__toggle');
+		this.dropdownInput = this.dropdown.querySelector('.dropdown__input');
+		this.dropdownCounter = this.dropdown.querySelector('.counter');
 
 		this.min = min;
 		this.max = max;
@@ -74,7 +74,7 @@ export default class Dropdown {
   }
 
   getQuantity() {
-		let quantity = document.querySelectorAll('.counter__row-quantity');
+		let quantity = this.dropdown.querySelectorAll('.counter__row-quantity');
 		let quantityValues = [];
 
 		for (var i=0; i < quantity.length; i++) {

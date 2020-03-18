@@ -1,13 +1,18 @@
-@import './plugins/air-datapicker/css/datepicker.css';
+@import './plugins/air-datapicker/scss/datepicker.css';
+// 
+.date-picker {
+  border: 1px solid red;
+  display: inline-block;
+  margin-left: 200px;
+  margin-top: 100px; 
+}
+//
 
-/*---------------------------------------------------------------переписанные стили----------------------------------------------*/
-/*изменение стилей*/
-// @media (max-width: 350px) {
-//   .datepicker {
-//     width: 265px;
-//     padding: 5px;
-//   }
-// }
+
+.hidd {
+  visibility: hidden;
+  height: 1px;
+} 
 
 .datepicker {
   margin-top: 6px;
@@ -167,13 +172,4 @@ div[data-action="prev"] {
 
 div[data-action="next"] { 
   margin-right: -8px;
-}
-
-
-// 
-.date-picker {
-	border: 1px solid red;
-	display: inline-block;
-	margin-left: 200px;
-	margin-top: 200px; 
 }

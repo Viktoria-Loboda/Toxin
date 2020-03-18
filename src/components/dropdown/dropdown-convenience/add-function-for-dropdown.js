@@ -1,4 +1,4 @@
-import Dropdown from './dropdown.js';
+import Dropdown from '../dropdown.js';
 
 let initDropdown = new Dropdown('dropdown', 0, 15, changingInputValue);
 
@@ -56,5 +56,9 @@ function changingInputValue(arr) {;
 		srtItem3 = '';
 	}
 
-	input.value = srtItem1 + srtItem2 + srtItem3;
+	if ((srtItem1 == '') && (srtItem2 == '') && (srtItem3 == '')) {
+		input.value = 'Выберите удобства';
+	} else {
+		input.value = srtItem1 + srtItem2 + srtItem3;
+	}
 }
