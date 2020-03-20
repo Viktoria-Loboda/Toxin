@@ -1,0 +1,156 @@
+.order-card {
+	margin: 150px auto;
+}
+
+.order-card {
+	max-width: 380px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 40px 29px 29px 30px;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 8px;
+	}
+
+	&__room {
+		font-family: 'Quicksand', sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 17px;
+		color: #1F2041;
+	}
+
+	&__room-status {
+		font-family: 'Montserrat', sans-serif;
+	  margin-left: 2px;
+		font-size: 12px;
+		line-height: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #BC9CFF;
+	}
+
+	&__number-room .value {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 20px;
+		margin-left: 2px;
+	}
+
+	&__price-for-day {
+		margin-top: 3px;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 18px;
+		color: rgba(31, 32, 65, 0.5);
+	}
+
+	& .small-text {
+		font-weight: normal;
+		font-size: 12px;
+	}
+
+	&__date-picker {
+		display: flex;
+		margin-top: 23px;
+		justify-content: space-between;
+	}
+
+	& .date-picker__label,
+	& .date-picker__input {
+		width: 100%;
+		max-width: 150px;
+	}
+
+	&__dropdown {
+		margin-top: 14px;
+	}
+
+	&__submit {
+		width: 100%;
+		border: none;
+		margin-top: 3px;
+		position: relative;
+		padding: 14px 22px 15px 18px;
+	}
+
+	&__submit::before {
+		content: "";
+		display: block;
+		width: 27px;
+		height: 27px;
+		position: absolute;
+		top: 6px;
+		right: 7px;
+		background: url('./images/sprite.png') no-repeat;
+		background-position: 0 -19px;
+	}
+}
+
+.total-calculation {
+	margin-top: 20px;
+	line-height: 17px;
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 17px;
+	}
+
+	&__row p:nth-child(1) {
+		width: 76%;
+		position: relative;
+	}
+
+	&__row--final-price {
+		width: auto;
+		position: relative;
+		margin-top: 31px;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 19px;
+		line-height: 24px;
+		color: #1F2041;
+	}
+
+	&__row--final-price p:nth-child(1) {
+		width: auto;
+	}
+
+	&__add-info {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+    top: -3px;
+    right: 2px;
+		background: url('./images/add-info.png');
+		background-size: cover;
+		cursor: pointer;
+	} 
+
+	& .currency {
+		margin-left: -4px;
+	}
+
+	&__text {
+		font-family: 'Quicksand', sans-serif;
+		letter-spacing: 1.2px;
+	}
+
+	&__border-bottom {
+		position: absolute;
+    width: 57%;
+    left: 64px;
+    bottom: 7px;
+		border: 1px dashed rgba(31, 32, 65, 0.25);
+	}
+
+	&__final-price {
+		font-size: 16px;
+	}
+}

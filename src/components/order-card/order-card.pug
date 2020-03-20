@@ -1,9 +1,60 @@
 div.order-card
-	div.order-card__row
-		p.order-card__number № 888 <span class="status">Люкс</span>
-		p.order-card__price-for-day 9 990 <span class="currency">₽</span><span class="small-text">в сутки</span>
-	div.datepicker-wrapper
-		label.datepicker__label(for="datepicker-here") Прибытие
-			input.datepicker__input(id="datepicker-here" placeholder="ДД.ММ.ГГГГ" redonly)
-		label.datepicker__label(for="datepicker-there") Выезд
-			input.datepicker__input(id="datepicker-there" placeholder="ДД.ММ.ГГГГ" redonly)
+	form.order-card__form(action="#" method="post")
+		div.order-card__row
+			p.order-card__room
+				span.order-card__number-room № <span class="value"> 888 </span>
+				span.order-card__room-status Люкс
+			p.order-card__price-for-day 9 990
+				span.currency ₽
+				span.small-text  в сутки
+		//- date-picker
+		div.date-picker.order-card__date-picker(id="date-picker-wrapper--order-card")
+			label.date-picker__label Прибытие
+				input.date-picker__input.date-picker__input--arrival(id="date-picker--order-card" placeholder="ДД.ММ.ГГГГ" redonly)
+			label.date-picker__label Выезд
+				input.date-picker__input.date-picker__input--departure(placeholder="ДД.ММ.ГГГГ" redonly)
+		//- dropdown
+		div.dropdown.order-card__dropdown(id="dropdown-guests")
+			div.dropdown__input-wrapper
+				label.dropdown__label Гости
+					input.dropdown__input(type="text" value="Сколько гостей" readonly)
+			div.counter.dropdown__counter.visually-hidden
+				div.counter__row
+					span.counter__row-name Взрослые
+					div.counter__inner
+						span.counter__btn.counter__btn--minus -
+						span.counter__row-quantity 0
+						span.counter__btn.counter__btn--plus + 
+				div.counter__row
+					span.counter__row-name Дети
+					div.counter__inner
+						span.counter__btn.counter__btn--minus -
+						span.counter__row-quantity 0
+						span.counter__btn.counter__btn--plus + 
+				div.counter__row
+					span.counter__row-name Младенцы
+					div.counter__inner
+						span.counter__btn.counter__btn--minus.disabled -
+						span.counter__row-quantity 0
+						span.counter__btn.counter__btn--plus + 
+		//- total-calculation
+		div.total-calculation.order-cards__total-calculation
+			div.total-calculation__row
+				p.total-calculation__price-day 9 990 <span class="currency">₽</span> x
+					span.total-calculation__count-days  4 суток
+				p.total-calculation__init-price 39 960 <span class="currency">₽</span>
+			div.total-calculation__row
+				p.total-calculation__services Сбор за услуги:
+					span.total-calculation__discount  cкидка
+						span.total-calculation__discount-value  2 179 <span class="currency">₽</span>
+						span.total-calculation__add-info 
+				p.total-calculation__price-services 0 <span class="currency">₽</span>
+			div.total-calculation__row
+				p.total-calculation__add-services Сбор за дополнительные<br> услуги
+					span.total-calculation__add-info 
+				p.total-calculation__price-add-services 300 <span class="currency">₽</span>
+			div.total-calculation__row.total-calculation__row--final-price
+				p.total-calculation__text Итого
+				p.total-calculation__border-bottom
+				p.total-calculation__final-price 38 081 <span class="currency">₽</span>
+		button.btn.order-card__submit(type="submit") Забронировать

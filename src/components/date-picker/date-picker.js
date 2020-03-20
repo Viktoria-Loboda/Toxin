@@ -65,7 +65,7 @@ class DatePicker {
 	}
 }
 
-$('#date-picker').datepicker({
+$('#date-picker--order-card').datepicker({
 	range: true,
 	inline: false,
 	clearButton: true,
@@ -73,8 +73,8 @@ $('#date-picker').datepicker({
 	minDate: new Date()
 });
 
-let myDatepicker = $('#date-picker').datepicker().data('datepicker'); 
-let datepicker = new DatePicker('date-picker-wrapper', myDatepicker);
+let myDatepicker = $('#date-picker--order-card').datepicker().data('datepicker'); 
+let datepicker = new DatePicker('date-picker-wrapper--order-card', myDatepicker);
 
 
 /*Инструкция для того, чтобы установить плагин
@@ -90,3 +90,4 @@ $('#date-pickers').datepicker({
 
 2. заыести свой datepicker let myDatepickers = $('#date-pickers').datepicker().data('datepicker'); 
 3. обьявить класс 
+*/
